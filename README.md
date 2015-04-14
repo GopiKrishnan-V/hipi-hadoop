@@ -16,8 +16,8 @@ We have used HIPI example program (downloader and dumphib) and used OpenCV jar t
 
 # Prerequisite
 
--ANT
--Hadoop ecosystem
+- ant
+- Hadoop ecosystem
 
 # Quickstart
 
