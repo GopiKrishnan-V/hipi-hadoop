@@ -1,2 +1,3 @@
-# hipi-hadoop
-Face detection of million of picture using HIPI in Hadoop ecosystem
+# HIPI-Hadoop-opencv
+Bulk image processing made simple. Face detection using HIPI and Opencv
+
