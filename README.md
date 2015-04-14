@@ -25,7 +25,7 @@ Build the two map reduce function manually by giving following command
 
 * Run 'ant downloader' and 'ant dumphib'
 
-The above comment will generate two jar files.
+The above command will generate two jar files.
 
 Move the list.txt file to hdfs "/user/hduser/hipi-hadoop/list.txt"
 
