@@ -8,7 +8,7 @@ HIPI is an image processing library designed to be used with the ([Apache Hadoop
 
 OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
 
-The library has more than 2500 optimized algorithms to solve real time problems image processing.
+The library has more than 2500 optimized algorithms to solve real time image processing problems.
 
 # How we done?
 
