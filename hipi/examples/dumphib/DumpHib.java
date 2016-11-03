@@ -40,7 +40,7 @@ import hipi.image.io.PPMImageUtil;
 import hipi.imagebundle.mapreduce.ImageBundleInputFormat;
 import hipi.util.ByteUtils;
 
-public class DumpHib extends 	 implements Tool {
+public class DumpHib extends Configured implements Tool {
 
 	/**
 	 * Mapper class for detecting face in the images available in the HIPI Bundle

@@ -1,13 +1,14 @@
 <project basedir="." default="all">
   <target name="setup">
-    <property name="hadoop.home" value="/usr/local/hadoop" />
+    <property name="hadoop.home" value="/usr/lib/hadoop" />
     <property name="hadoop.version" value="1.2.1" />
     <property name="hadoop.classpath" value="${hadoop.home}/hadoop-core-${hadoop.version}.jar" />
   </target>
 
   <path id="project-classpath">
-	<fileset dir="/usr/local/hadoop/" includes="*.jar" />
-	<fileset dir="/usr/local/lib/jdk1.6.0_22/lib/" includes="opencv-249.jar" />
+	<fileset dir="/usr/lib/hadoop/" includes="*.jar" />
+	<fileset dir="/usr/java/jdk1.7.0_67-cloudera/lib/" includes="opencv-249.jar" />
+	<fileset dir="./src" includes="*.jar" />
   </path>
 
   <target name="test_settings">
@@ -19,10 +20,10 @@
   <target name="covariance" depends="setup, test_settings">
     <mkdir dir="bin" />
     <!-- Compile -->
-    <javac nowarn="on" includeantruntime="no" srcdir="./hipi/examples/covariance" destdir="./bin" classpath="${hadoop.classpath}:../src/hipi.jar" />
+    <javac nowarn="on" includeantruntime="no" srcdir="./hipi/examples/covariance" destdir="./bin" classpath="${hadoop.classpath}:./src/hipi.jar" />
     <!-- Create the jar -->
     <jar destfile="./covariance.jar" basedir="./bin">
-	  <zipfileset src="../src/hipi.jar" />
+	  <zipfileset src="./src/hipi.jar" />
       <manifest>
 	    <attribute name="Main-Class" value="hipi.examples.covariance.Covariance" />
       </manifest>
@@ -34,10 +35,10 @@
     <mkdir dir="bin" />
     <!-- Compile -->
     <echo>hadoop.classpath=${hadoop.classpath}</echo>
-    <javac nowarn="on" includeantruntime="no" srcdir="./hipi/examples/downloader" destdir="./bin" classpath="${hadoop.classpath}:../src/hipi.jar" />
+    <javac nowarn="on" includeantruntime="no" srcdir="./hipi/examples/downloader" destdir="./bin" classpath="${hadoop.classpath}:./src/hipi.jar" />
     <!-- Create the jar -->
     <jar destfile="./downloader.jar" basedir="./bin">
-	  <zipfileset src="../src/hipi.jar" />
+	  <zipfileset src="./src/hipi.jar" />
       <manifest>
 	    <attribute name="Main-Class" value="hipi.examples.downloader.Downloader" />
       </manifest>
@@ -51,8 +52,8 @@
     <javac nowarn="on" includeantruntime="no" srcdir="./hipi/examples/dumphib" destdir="./bin" classpathref="project-classpath" />
     <!-- Create the jar -->
     <jar destfile="./dumphib.jar" basedir="./bin">
-	  <zipfileset src="../src/hipi.jar" />
-	  <zipfileset src="../src/opencv-249.jar" />
+	  <zipfileset src="./src/hipi.jar" />
+	  <zipfileset src="./src/opencv-249.jar" />
       <manifest>
 	    <attribute name="Main-Class" value="hipi.examples.dumphib.DumpHib" />
       </manifest>
